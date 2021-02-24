@@ -1,23 +1,15 @@
 {
-  "name": "rpg-server",
-  "version": "1.0.0",
-  "description": "rpg_server",
-  "main": "server/index.js",
-  "scripts": {
-    "postinstall": "yarn --prefix static && yarn",
-    "build": "npm run build --prefix static",
-    "start": "node server/index.js"
-  },
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "bcryptjs": "^2.4.3",
-    "dotenv": "^8.2.0",
-    "express": "^4.17.1",
-    "express-validator": "^6.9.2",
-    "jsonwebtoken": "^8.5.1",
-    "lodash": "^4.17.21",
-    "mongoose": "^5.11.12",
-    "nodemailer": "^6.4.18"
-  }
+    "name": "rpg-server",
+    "version": "1.0.0",
+    "description": "rpg_server",
+    "main": "server/index.js",
+    "private": true,
+    "scripts": {
+        "postinstall": "cd ./static && yarn && cd .. && cd ./server && yarn",
+        "build": "cd ./static && yarn build",
+        "start": "node ./server/index.js"
+    },
+    "author": "",
+    "license": "ISC"
 }
+  
