@@ -12,8 +12,7 @@ var checkAuth = require('../middlewares/CheckAuth');
 //var registerValidation = require('../utils/validators')
 //var updateLastSeen = require('../middlewares/UpdateLastSeen')
 var staticPath = path.join(__dirname, '../../static/build');
-var indexHTML = path.join(__dirname,'../../static/build/index.html');
-
+var indexHTML = path.join(__dirname, '../../static/build/index.html');
 const createRoutes = (app) => {
   const UserController = new UserCtrl();
   //const DialogController = new DialogCtrl(io);
@@ -47,7 +46,7 @@ const createRoutes = (app) => {
 //   app.get("/api/messages", MessageController.index);
 //   app.post("/api/messages", MessageController.create);
 //   app.delete("/api/messages", MessageController.delete);
-   //app.get('/*', (req, res) => res.sendFile(indexHTML));
+  app.get('/*', (req, res) => res.sendFile(indexHTML));
 //   console.log("2");
   
 };
