@@ -9,7 +9,7 @@ import { withRouter } from 'react-router';
 const SignUp = ({history}) => {
   const onFinish = (values) => {
     console.log('Received values of form: ', values);
-    axios.post('http://localhost:8000/api/user/signup', values).then(res => {
+    axios.post('api/user/signup', values).then(res => {
       console.log(res) 
       history.push('/signup/verify')
     })
