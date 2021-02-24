@@ -4,8 +4,9 @@
   "description": "rpg_server",
   "main": "server/index.js",
   "scripts": {
-    "start": "yarn && cd static && yarn && yarn build && cd .. && node server/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "postinstall": "yarn --prefix static && yarn",
+    "build": "npm run build --prefix static",
+    "start": "node server/index.js"
   },
   "author": "",
   "license": "ISC",
