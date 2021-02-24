@@ -71,7 +71,6 @@ class UserController {
   
     create = (req, res) => {
       const salt = bcrypt.genSaltSync(10);
-      console.log(req)
       const confirmed_hash = bcrypt.hashSync(req.body.password, salt);
       const postData = {
         email: req.body.email,
@@ -81,7 +80,6 @@ class UserController {
       };
   
       const errors = validationResult(postData);
-      console.log(postData.email);
   
       UserModel.findOne({email: postData.email}).then(function (result) {                     //Для меня некоторая загадка, почему нельзя после первого
         if (result) {return res.json({
@@ -146,7 +144,6 @@ class UserController {
           message: 'Данная ссылка недействительна'
         });
       }
-  
       UserModel.findOneAndUpdate({
         confirmed_hash: hash
       }, {

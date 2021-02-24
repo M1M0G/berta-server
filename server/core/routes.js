@@ -20,7 +20,7 @@ const createRoutes = (app) => {
   //const MessageController = new MessageCtrl(io);
   
   app.use(express.static(staticPath));
-  app.get('/*', (req, res) => res.sendFile(indexHTML));
+  //app.get('/*', (req, res) => res.sendFile(indexHTML));
   app.use(bodyParser.json());
   app.use(checkAuth);
   //app.use(updateLastSeen);
@@ -47,7 +47,7 @@ const createRoutes = (app) => {
 //   app.get("/api/messages", MessageController.index);
 //   app.post("/api/messages", MessageController.create);
 //   app.delete("/api/messages", MessageController.delete);
-   app.get('/*', (req, res) => res.sendFile(indexHTML));
+   //app.get('/*', (req, res) => res.sendFile(indexHTML));
 //   console.log("2");
   
 };
