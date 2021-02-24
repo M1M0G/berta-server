@@ -17,6 +17,7 @@ const userModelSchema = new Schema({
         type: String,
         require: "Password is required"
     },
+    confirmed_hash: String,
     confirmed: {
         type: Boolean,
         default: false
