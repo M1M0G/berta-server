@@ -2,9 +2,9 @@ const express = require('express');
 
 console.log('Server is starting...');
 
-require('dotenv/config')
-const dotenv = require('dotenv');
-dotenv.config();
+// require('dotenv/config')
+// const dotenv = require('dotenv');
+// dotenv.config();
 
 
 //
