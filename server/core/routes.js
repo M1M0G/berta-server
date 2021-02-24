@@ -11,16 +11,16 @@ var checkAuth = require('../middlewares/CheckAuth');
 //var loginValidation = require('../utils/validators')
 //var registerValidation = require('../utils/validators')
 //var updateLastSeen = require('../middlewares/UpdateLastSeen')
-//var staticPath = path.join(__dirname, '../../client/build');
-//var indexHTML = path.join(__dirname,'../../client/build/index.html');
+var staticPath = path.join(__dirname, '../../static/build');
+var indexHTML = path.join(__dirname,'../../static/build/index.html');
 
 const createRoutes = (app) => {
   const UserController = new UserCtrl();
   //const DialogController = new DialogCtrl(io);
   //const MessageController = new MessageCtrl(io);
   
-  //app.use(express.static(staticPath));
-  // app.get('/*', (req, res) => res.sendFile(indexHTML));
+  app.use(express.static(staticPath));
+  app.get('/*', (req, res) => res.sendFile(indexHTML));
   app.use(bodyParser.json());
   app.use(checkAuth);
   //app.use(updateLastSeen);
@@ -47,7 +47,7 @@ const createRoutes = (app) => {
 //   app.get("/api/messages", MessageController.index);
 //   app.post("/api/messages", MessageController.create);
 //   app.delete("/api/messages", MessageController.delete);
-//   app.get('/*', (req, res) => res.sendFile(indexHTML));
+   app.get('/*', (req, res) => res.sendFile(indexHTML));
 //   console.log("2");
   
 };
